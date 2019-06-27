@@ -1,0 +1,3 @@
+spring.jsonrpc:
+  path: api
+  basePackage: ru.krupt.jsonrpc.example
