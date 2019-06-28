@@ -14,6 +14,8 @@ repositories {
 
 dependencies {
     implementation 'com.github.krupt:spring-boot-starter-jsonrpc:0.1.0'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
 
 tasks.withType(JavaCompile) {

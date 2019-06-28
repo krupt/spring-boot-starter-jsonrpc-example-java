@@ -1,9 +1,9 @@
 package ru.krupt.jsonrpc.example.service;
 
+import com.github.krupt.jsonrpc.annotation.JsonRpcService;
 import com.github.krupt.jsonrpc.annotation.NoJsonRpcMethod;
 import ru.krupt.jsonrpc.example.dto.UserCreateRequest;
 import ru.krupt.jsonrpc.example.model.User;
-import com.github.krupt.jsonrpc.annotation.JsonRpcService;
 
 import java.util.Collections;
 import java.util.List;
@@ -22,22 +22,22 @@ public class UserService {
         if (user != null) {
             return user;
         } else {
-            final User defaultUser = new User();
-            defaultUser.setId(userId);
-            defaultUser.setUsername("krupt");
-            defaultUser.setFirstName("Andrey");
-            defaultUser.setLastName("Kovalev");
-
-            return defaultUser;
+            return User.builder()
+                    .id(userId)
+                    .username("krupt")
+                    .firstName("Andrey")
+                    .lastName("Kovalev")
+                    .build();
         }
     }
 
     public User create(UserCreateRequest createRequest) {
-        final User user = new User();
-        user.setId(UUID.randomUUID());
-        user.setUsername(createRequest.getUsername());
-        user.setFirstName(createRequest.getFirstName());
-        user.setLastName(createRequest.getLastName());
+        final User user = User.builder()
+                .id(UUID.randomUUID())
+                .username(createRequest.getUsername())
+                .firstName(createRequest.getFirstName())
+                .lastName(createRequest.getLastName())
+                .build();
 
         users.put(user.getId(), user);
 
