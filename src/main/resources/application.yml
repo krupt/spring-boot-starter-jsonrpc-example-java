@@ -1,3 +1,6 @@
-spring.jsonrpc:
-  path: api
-  basePackage: ru.krupt.jsonrpc.example
+spring:
+  jsonrpc:
+    path: api
+    basePackage: ru.krupt.jsonrpc.example
+  profiles:
+    active: swagger

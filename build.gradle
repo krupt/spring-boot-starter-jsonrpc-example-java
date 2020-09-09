@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
     id 'java'
 }
 
@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.krupt:spring-boot-starter-jsonrpc:0.1.0'
+    implementation 'com.github.krupt:spring-boot-starter-jsonrpc:1.0.0'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 }
